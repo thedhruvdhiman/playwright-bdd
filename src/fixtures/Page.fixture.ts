@@ -1,4 +1,5 @@
 import { test as PageFixtureObjects } from "playwright-bdd";
+import {expect as Expect} from '@playwright/test';
 import LoginPage from "../pages/Login.page";
 import InventoryPage from "../pages/Inventory.page";
 
@@ -17,4 +18,4 @@ const pageFixture = PageFixtureObjects.extend<pageClasses>({
 });
 
 export const test = pageFixture;
-export const expect = test.expect;
+export const expect = Expect;
