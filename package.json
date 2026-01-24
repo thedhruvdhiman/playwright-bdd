@@ -1,0 +1,12 @@
+{
+  "devDependencies": {
+    "@playwright/test": "^1.57.0",
+    "@types/node": "^25.0.10",
+    "allure-playwright": "^3.4.5",
+    "playwright-bdd": "^8.4.2"
+  },
+  "scripts": {
+    "test": "npx bddgen test && npx playwright test --headed",
+    "test:tag": "npm run test -- --grep"
+  }
+}
