@@ -8,5 +8,8 @@
   "scripts": {
     "test": "npx bddgen test && npx playwright test --headed",
     "test:tag": "npm run test -- --grep"
+  },
+  "dependencies": {
+    "@allurereport/plugin-awesome": "^3.0.1"
   }
 }

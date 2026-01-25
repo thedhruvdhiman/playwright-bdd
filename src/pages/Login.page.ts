@@ -3,8 +3,6 @@
 import { expect, Page } from "@playwright/test";
 import BasePage from "./Base.page.ts";
 
-const baseURL = process.env.BASE_URL ? process.env.BASE_URL : "https://www.saucedemo.com/";
-
 class LoginPage extends BasePage {
 
   constructor(page: Page) {
@@ -13,8 +11,6 @@ class LoginPage extends BasePage {
 
   private readonly dashboardURL: string =
     "https://www.saucedemo.com/inventory.html";
-
-  private readonly loginURL: string = "https://www.saucedemo.com/";
 
   private readonly errorMessage =
     "Epic sadface: Username and password do not match any user in this service";
@@ -34,8 +30,7 @@ class LoginPage extends BasePage {
   }
 
   async gotoLoginPage() {
-    console.log('Navigating to login page');
-    await this.page.goto(this.loginURL, {
+    await this.page.goto('/', {
       waitUntil: "domcontentloaded",
     });
   }
