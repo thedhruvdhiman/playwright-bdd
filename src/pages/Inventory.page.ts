@@ -1,5 +1,6 @@
 import { expect, Page } from "@playwright/test";
 import BasePage from "./Base.page.ts";
+import dateAndTime from "../utils/getCurrentTime.ts";
 
 class InventoryPage extends BasePage {
 
