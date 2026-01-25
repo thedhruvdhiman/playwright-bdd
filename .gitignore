@@ -4,3 +4,8 @@ test-results
 reports
 storageState.json
 playwright-report
+allure-results
+allure-report
+results
+package-lock.json
+.env
