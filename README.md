@@ -1,15 +1,19 @@
 # playwright-bdd
 
+Get started - 
 
-Run the whole suite 
+```bash
+npm install
+```
+
+Run the whole suite -
 
 ```bash
 npm run test
 ```
 
-run using multiple tags: 
+Run using tags -  
 
 ```bash
-npm run test:tag "@test|@Inventory001|@Inventory002"
+npm run test:tag "@Inventory001|@Inventory002"
 ```
-
