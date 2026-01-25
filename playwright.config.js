@@ -3,10 +3,12 @@ import { defineBddConfig, cucumberReporter } from "playwright-bdd";
 import dateAndTime from "./src/utils/getCurrentTime";
 import runTag from "./src/utils/runTags";
 
-
 const testDir = defineBddConfig({
   features: "src/features/*.feature",
-  steps: "src/{step-definition,fixtures}/*.ts",
+  steps: [
+    "src/step-definition/**/*.ts",
+    "src/fixtures/**/*.ts",
+  ],
 });
 
 export default defineConfig({

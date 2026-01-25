@@ -14,19 +14,10 @@ const globalTeardown = async () => {
     fs.rmSync(storage_loc, { recursive: true, force: true });
   }
 
-  // fs.mkdir(cwd() + "/allure-report", { recursive: true }, (err) => {
-  //   if (err) {
-  //     console.error(`Error creating directory: ${err.message}`);
-  //   }
-  // });
-  //// create allure report
-
   const resp = execSync(
     `allure generate ./results/${runTags}_${dateAndTime}/ --output ./report/${runTags}_${dateAndTime}/`
   );
-
-  console.log('resp: ', resp)
-
+  
   if (fs.existsSync("./results")) {
     fs.rmSync("./results", { recursive: true, force: true });
   }

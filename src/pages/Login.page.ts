@@ -32,6 +32,7 @@ class LoginPage extends BasePage {
   async gotoLoginPage() {
     await this.page.goto('/', {
       waitUntil: "domcontentloaded",
+      timeout: 90000,
     });
   }
 

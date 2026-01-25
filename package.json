@@ -10,6 +10,7 @@
     "test:tag": "npm run test -- --grep"
   },
   "dependencies": {
-    "@allurereport/plugin-awesome": "^3.0.1"
+    "@allurereport/plugin-awesome": "^3.0.1",
+    "allure-js-commons": "^3.4.5"
   }
 }
