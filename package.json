@@ -8,7 +8,15 @@
   "scripts": {
     "test": "npx bddgen test && npx playwright test --headed",
     "test:tag": "npm run test -- --grep",
-    "rebuild": "rm -rf node_modules && rm -rf package-lock.json && npm install"
+    "rebuild": "rm -rf node_modules && rm -rf package-lock.json && npm install",
+    "on:chrome": "npm run test -- --project=chromium",
+    "on:firefox": "npm run test -- --project=firefox",
+    "on:webkit": "npm run test -- --project=webkit",
+    "on:chrome:tag": "npm run test -- --project=chromium --grep",
+    "on:firefox:tag": "npm run test -- --project=firefox --grep",
+    "on:webkit:tag": "npm run test -- --project=webkit --grep",
+    "on:all": "npm run test -- --project=chromium --project=firefox --project=webkit",
+    "on:all:tag": "npm run test -- --project=chromium --project=firefox --project=webkit --grep"
   },
   "dependencies": {
     "@allurereport/plugin-awesome": "^3.0.1",

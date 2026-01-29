@@ -1,14 +1,11 @@
-import { defineConfig } from "@playwright/test";
+import { defineConfig, devices } from "@playwright/test";
 import { defineBddConfig, cucumberReporter } from "playwright-bdd";
 import dateAndTime from "./src/utils/getCurrentTime";
 import runTag from "./src/utils/runTags";
 
 const testDir = defineBddConfig({
   features: "src/features/*.feature",
-  steps: [
-    "src/step-definition/**/*.ts",
-    "src/fixtures/**/*.ts",
-  ],
+  steps: ["src/step-definition/**/*.ts", "src/fixtures/**/*.ts"],
 });
 
 export default defineConfig({
@@ -41,4 +38,19 @@ export default defineConfig({
   },
   // globalSetup: require.resolve("./src/fixtures/global-setup.ts"),
   globalTeardown: require.resolve("./src/fixtures/global-teardown.ts"),
+  projects: [
+    /* Test against desktop browsers */
+    {
+      name: "chromium",
+      use: { ...devices["Desktop Chrome"] },
+    },
+    {
+      name: "firefox",
+      use: { ...devices["Desktop Firefox"] },
+    },
+    {
+      name: "webkit",
+      use: { ...devices["Desktop Safari"] },
+    },
+  ],
 });
