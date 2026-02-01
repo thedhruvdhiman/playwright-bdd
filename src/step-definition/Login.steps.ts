@@ -1,7 +1,4 @@
-import { createBdd } from "playwright-bdd";
-import { test } from "../fixtures/Page.fixture.ts";
-
-const { Given, Then } = createBdd(test);
+import { Given, Then } from "../fixtures/Page.fixture.ts";
 
 Given(
   /^I login to the application with username (.*) and password (.*)$/,

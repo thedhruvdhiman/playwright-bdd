@@ -1,9 +1,5 @@
-import { createBdd } from "playwright-bdd";
-import { test } from "./Page.fixture";
+import { Before, After } from "./Page.fixture";
 import { attachment } from "allure-js-commons";
-
-const { Before, After } = createBdd(test);
-
 
 Before(async ({ $testInfo }) => {});
 

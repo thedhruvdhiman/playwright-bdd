@@ -10,10 +10,13 @@ jobs:
       - uses: actions/setup-node@v5
         with:
           node-version: lts/*
+
       - name: Install dependencies
         run: npm install
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
+      - name: Install Allure commandline
+        run: npm install -D allure-commandline
       - name: Run Playwright tests
         run: npm run test:headless
       - uses: actions/upload-artifact@v4
@@ -22,3 +25,9 @@ jobs:
           name: playwright-report
           path: report/
           retention-days: 2
+      # - name: Run Allure Action
+      #   uses: allure-framework/allure-report@v0
+      #   with:
+      #     # Path to the generated report directory
+      #     # By default, it's set to `./allure-report`
+      #     report-directory: "./"
