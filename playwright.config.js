@@ -8,6 +8,10 @@ const testDir = defineBddConfig({
   steps: ["src/step-definition/**/*.ts", "src/fixtures/**/*.ts"],
 });
 
+const cucumberConfig = cucumberReporter("html", {
+  outputFile: `./cucumber-report/${runTag}_${dateAndTime}.html`,
+});
+
 const allureConfig = [
   "allure-playwright",
   {
@@ -26,12 +30,7 @@ const allureConfig = [
 
 export default defineConfig({
   testDir,
-  reporter: [
-    cucumberReporter("html", {
-      outputFile: `report/cucumber-report/${runTag}_${dateAndTime}.html`,
-    }),
-    allureConfig,
-  ],
+  reporter: [cucumberConfig, allureConfig],
   headless: false,
   use: {
     baseURL: "https://www.saucedemo.com/",

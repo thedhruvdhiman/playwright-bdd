@@ -17,7 +17,8 @@
     "on:firefox:tag": "npm run test -- --project=firefox --grep",
     "on:webkit:tag": "npm run test -- --project=webkit --grep",
     "on:all": "npm run test -- --project=chromium --project=firefox --project=webkit",
-    "on:all:tag": "npm run test -- --project=chromium --project=firefox --project=webkit --grep"
+    "on:all:tag": "npm run test -- --project=chromium --project=firefox --project=webkit --grep",
+    "allure:generate": "npx allure generate ./results/* --output ./report/"
   },
   "dependencies": {
     "@allurereport/plugin-awesome": "^3.0.1",
