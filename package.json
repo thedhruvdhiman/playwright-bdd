@@ -6,6 +6,7 @@
     "playwright-bdd": "^8.4.2"
   },
   "scripts": {
+    "test:headless": "npx bddgen test && npx playwright test",
     "test": "npx bddgen test && npx playwright test --headed",
     "test:tag": "npm run test -- --grep",
     "rebuild": "rm -rf node_modules && rm -rf package-lock.json && npm install",
